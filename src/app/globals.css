@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 
+:root{
+  --primary-blue: #2B59FF
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -28,6 +32,25 @@
   color: rgb(0 0 0 0.5);
   font-weight: 300;
   margin: 1.25rem 0; /* 20px */
+}
+
+.landingPageButtonStyles {
+  background-color: var(--primary-blue);
+  color: white;
+  border-radius: 9999px;
+  margin-top: 2.5rem;
+}
+
+.custom-btn{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  
 }
 
 /* xl */
