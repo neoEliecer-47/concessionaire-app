@@ -1,15 +1,11 @@
-'use client'
+"use client";
 
 import Image from "next/image";
 import styles from "./Hero.module.css";
 import CustomButton from "./CustomButton";
 
-
 const Hero = () => {
-
-    function handleScroll(){
-
-    }
+  function handleScroll() {}
 
   return (
     <div className="hero">
@@ -23,11 +19,23 @@ const Hero = () => {
           process.
         </p>
 
-        <CustomButton 
-            title='Explore Cars'
-            containerStyles='landingPageButtonStyles'
-            handleClick={handleScroll}
+        <CustomButton
+          title="Explore Cars"
+          containerStyles="landingPageButtonStyles"
+          handleClick={handleScroll}
         />
+      </div>
+
+      <div className="hero__image-container">
+        <div className="hero__image">
+          <Image
+            src="/hero.png"
+            alt="hero"
+            fill
+            style={{ objectFit: "contain" }}
+          />
+          <div className="hero__image-overlay"/>
+        </div>
       </div>
     </div>
   );
