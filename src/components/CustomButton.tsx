@@ -5,11 +5,11 @@ import classNames from "classnames";
 import styles from './CustomButton.module.css'
 import { CustomButtonProps } from "../../types";
 
-const CustomButton = ( { title, containerStyles, handleClick }: CustomButtonProps ) => {
+const CustomButton = ( { title, containerStyles, handleClick, btnType }: CustomButtonProps ) => {
   return (
     <button
       disabled={false}
-      type="button"
+      type={btnType || "button"}
       className={classNames('custom-btn', containerStyles)}
       onClick={handleClick}
     >

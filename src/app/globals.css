@@ -17,8 +17,8 @@
   position: relative;
   z-index: 0;
   max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  
 }
 
 .hero__title{
@@ -56,6 +56,14 @@
   width: 100%;
   height: 37rem;
   overflow: hidden;
+}
+
+.headerButtonStyles{
+  color: var(--primary-blue);
+  border-radius: 9999px;
+  background-color: white;
+  min-width: 130px;
+  border-color: white;
 }
 
 .landingPageButtonStyles {
