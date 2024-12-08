@@ -1,3 +1,7 @@
 .spanButton{
     flex: 1;
+    border-color: white;
+    outline: 2px solid transparent; 
+
+outline-offset: 2px;
 }

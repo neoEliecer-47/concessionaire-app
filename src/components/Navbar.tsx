@@ -1,9 +1,15 @@
+'use client'
+
 import Link from "next/link";
 import Image from "next/image";
 import CustomButton from "./CustomButton";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
+
+  function handleClick(){
+
+  }
   return (
     <header className={styles.headerContainer}>
       <nav className={styles.navBox}>
@@ -21,7 +27,7 @@ const Navbar = () => {
           title="Sign In"
           btnType="button"
           containerStyles="headerButtonStyles"
-          handleClick={''}
+          handleClick={handleClick}
         />
       </nav>
     </header>
