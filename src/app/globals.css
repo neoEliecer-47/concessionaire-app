@@ -1,15 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 
+:root{
+  --primary-blue: #2B59FF
+}
+
 * {
   margin: 0;
-  padding: 0;
+  padding: 2px 5px;
   box-sizing: border-box;
   font-family: "Manrope", sans-serif;
 }
 
 .hero {
-  display: flex;
-  flex-direction: column;
+
   gap: 5;
   position: relative;
   z-index: 0;
@@ -30,10 +33,69 @@
   margin: 1.25rem 0; /* 20px */
 }
 
+.hero__image{
+  position: relative;
+  width: 90%;
+  height: 37rem;
+  z-index: 0;
+}
+
+.hero__image-container{
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  width: 100%;
+}
+
+.hero__image-overlay{
+  position: absolute;
+  right: -25%;
+   background-image: url("/hero-bg.png");
+  background-repeat: round;
+  z-index: -10;
+  width: 100%;
+  height: 37rem;
+  overflow: hidden;
+}
+
+.landingPageButtonStyles {
+  background-color: var(--primary-blue);
+  color: white;
+  border-radius: 9999px;
+  margin-top: 2.5rem;
+}
+
+.custom-btn{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  
+}
+
 /* xl */
 @media screen and (min-width: 1280px){
   .hero{
     flex-direction: row;
+  }
+
+  .hero__image-container{
+    flex: 1.5;
+    height: 100vh;
+  }
+
+  .hero__image{
+    width: 100%;
+    height: 100%;
+  }
+  .hero__image-overlay{
+    top: -6rem;
+    right: -50%;
+    height: 100vh;
   }
 }
 
