@@ -5,3 +5,8 @@
   min-height: 100vh;
   overflow: hidden;
 }
+
+.carsContainer{
+  margin-top: 3rem;
+  padding: 1px;
+}

@@ -6,6 +6,9 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Hero />
+      <div className={styles.carsContainer} id='discover'>
+        <div></div>
+      </div>
     </main>
   )
 }
