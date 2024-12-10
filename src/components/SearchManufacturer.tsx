@@ -10,9 +10,9 @@ const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManufacture
     <div className="search-manufacturer">
       <Combobox>
         <div style={{ position: 'relative', width: '100%' }}>
-          <Combobox.Button style={{ position: 'absolute', top: '14px', left: '10px', border: 'none' }}>
-            <Image src='/car-logo.svg' alt="car logo" width={20} height={20}/>
-          </Combobox.Button>
+          <ComboboxButton style={{ position: 'absolute', top: '15px', left: '15px', border: 'none', padding: '0' }}>
+            <Image src='/car-logo.svg' alt="car logo" width={25} height={25} style={{ padding: '0' }}/>
+          </ComboboxButton>
           <ComboboxInput className='search-manufacturer__input' placeholder="Volkswagen" style={{ paddingLeft: '2.5rem' }}/>
 
           
