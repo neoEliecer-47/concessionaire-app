@@ -1,12 +1,13 @@
 .main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
   overflow: hidden;
 }
 
-.carsContainer{
+.carsContainer {
   margin-top: 3rem;
   padding: 1px;
+}
+
+.titleCarsHome {
+  font-size: 2.25rem;
+  font-weight: 800;
 }
