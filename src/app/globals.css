@@ -199,6 +199,27 @@
   border: none;
 }
 
+.search-manufacturer__options{
+  position: absolute;
+  margin-top: 0.25rem;
+  max-height: 15rem;
+  width: 100%;
+  overflow: auto;
+  border-radius: 0.375rem;
+  background-color: white;
+  padding: 0.25rem 0;
+  font-size: 1rem;
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0,0,0,0.1), 0 4px 6px -4px rgb(0,0,0,0.1);
+
+}
+
+.search-manufacturer__option{
+  cursor: default;
+  user-select: none;
+  padding: 0.5rem 1rem 0.5rem 2.5rem;
+
+}
+
 
 
 /* 2xl */

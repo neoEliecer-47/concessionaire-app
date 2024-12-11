@@ -1,0 +1,18 @@
+.transitionLeave{
+    transition: all ease-in 100ms;
+}
+.transitionLeaveFrom{
+    opacity: 0;
+}
+
+.manufacterersCombo{
+    position: relative;
+}
+.activeOption{
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.unActiveOption{
+    color: rgb(17,24,39);
+}
