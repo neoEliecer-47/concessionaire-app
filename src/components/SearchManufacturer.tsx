@@ -33,7 +33,7 @@ const SearchManufacturer = ({
 
   return (
     <div className="search-manufacturer">
-      <Combobox>
+      <Combobox value={manufacturer} onChange={setManufacturer}>
         <div style={{ position: "relative", width: "100%" }}>
           <ComboboxButton
             style={{
