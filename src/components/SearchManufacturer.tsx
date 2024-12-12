@@ -72,7 +72,7 @@ const SearchManufacturer = ({
                   value={query}
                   className="search-manufacturer__option"
                 >
-                  Create "{query}"
+                  there is no brand named "{query}"
                 </ComboboxOption>
               ) : (
                 filteredManufacturers.map((item) => (
@@ -88,7 +88,13 @@ const SearchManufacturer = ({
                       )
                     }
                     value={item}
-                  ></ComboboxOption>
+                  >
+                    {({ selected, active })=>(
+                      <>
+                        <span></span>
+                      </>
+                    )}
+                  </ComboboxOption>
                 ))
               )}
             </ComboboxOptions>
