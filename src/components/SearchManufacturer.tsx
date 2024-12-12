@@ -88,7 +88,9 @@ const SearchManufacturer = ({
                       )
                     }
                     value={item}
-                  ></ComboboxOption>
+                  >
+                    {item}
+                  </ComboboxOption>
                 ))
               )}
             </ComboboxOptions>
