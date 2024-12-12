@@ -89,9 +89,24 @@ const SearchManufacturer = ({
                     }
                     value={item}
                   >
-                    {({ selected, active })=>(
+                    {({ selected, active }) => (
                       <>
-                        <span></span>
+                        <span
+                          className={styles.spanOneStyle}
+                          style={{ fontWeight: `${selected ? "500" : "400"}` }}
+                        >
+                          {item}
+                        </span>
+                        {selected ? (
+                          <span
+                            className={styles.spanTwoStyle}
+                            style={{
+                              color: `${
+                                active ? "rgb(255,255,255)" : "rgb(13,148,136)"
+                              }`,
+                            }}
+                          ></span>
+                        ) : null}
                       </>
                     )}
                   </ComboboxOption>
