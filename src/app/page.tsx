@@ -6,7 +6,8 @@ import CustomFilter from "@/components/CustomFilter";
 import { fetchCars } from "../../utils";
 
 export default async function Home() {
-  const allCars = await fetchCars()
+  //const allCars = await fetchCars();
+  const allCars2 = true
 
   return (
     <main className={styles.main}>
@@ -22,21 +23,26 @@ export default async function Home() {
           <SearchBar />
 
           <div className="home__filter-container">
-            <CustomFilter title='fuel'/>
-            <CustomFilter title='year'/>
+            <CustomFilter title="fuel" />
+            <CustomFilter title="year" />
           </div>
         </div>
 
-
         <div>
-          {allCars ? (
+          {!allCars2 ? (
             <section>
-              WE HAVE CARS
+              <div className='home__cars-wrapper'>
+                
+              </div>
             </section>
-          ): (
+          ) : (
             <div className="home__error-container">
-              <h2>No Results</h2>
-              <p>{allCars?.message}</p>
+              <h2
+                style={{ color: "black", font: "1.25rem", fontWeight: "700" }}
+              >
+                No Results
+              </h2>
+              {/* <p>{allCars2?.message}</p> */}
             </div>
           )}
         </div>
