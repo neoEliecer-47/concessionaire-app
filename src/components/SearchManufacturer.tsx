@@ -1,5 +1,8 @@
 "use client";
 
+
+
+
 import { SearchManufacturerProps } from "../../types";
 import {
   Combobox,

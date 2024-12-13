@@ -3,8 +3,11 @@ import styles from "./page.module.css";
 import Hero from "@/components/Hero";
 import SearchBar from "@/components/SearchBar";
 import CustomFilter from "@/components/CustomFilter";
+import { fetchCars } from "../../utils";
 
-export default function Home() {
+export default async function Home() {
+  const allCars = await fetchCars()
+
   return (
     <main className={styles.main}>
       <Hero />
@@ -22,6 +25,20 @@ export default function Home() {
             <CustomFilter title='fuel'/>
             <CustomFilter title='year'/>
           </div>
+        </div>
+
+
+        <div>
+          {allCars ? (
+            <section>
+              WE HAVE CARS
+            </section>
+          ): (
+            <div className="home__error-container">
+              <h2>No Results</h2>
+              <p>{allCars?.message}</p>
+            </div>
+          )}
         </div>
       </div>
     </main>
