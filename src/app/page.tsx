@@ -4,9 +4,10 @@ import Hero from "@/components/Hero";
 import SearchBar from "@/components/SearchBar";
 import CustomFilter from "@/components/CustomFilter";
 import { fetchCars } from "../../utils";
+import CarCard from "@/components/CarCard";
 
 export default async function Home() {
-  //const allCars = await fetchCars();
+  const allCars = await fetchCars();
   const allCars2 = true
 
   return (
@@ -29,10 +30,12 @@ export default async function Home() {
         </div>
 
         <div>
-          {!allCars2 ? (
+          {allCars ? (
             <section>
               <div className='home__cars-wrapper'>
-                
+                {allCars?.map((car)=>(
+                  <CarCard car={car}/>
+                ))}
               </div>
             </section>
           ) : (

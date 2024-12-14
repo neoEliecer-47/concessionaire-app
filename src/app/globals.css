@@ -3,6 +3,7 @@
 :root {
   --primary-blue: #2b59ff;
   --primary-black: #2b2c35;
+  --primary-blue-100: #f5f8ff;
 }
 
 * {
@@ -234,6 +235,23 @@
   width: 100%;
   gap: 2rem;
   padding-top: 3.5rem;
+}
+
+.car-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-black);
+  background-color: var(--primary-blue-100);
+  border-radius: 1.5rem;
+}
+
+.car-card:hover {
+  background-color: white;
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 4px 6px -1px rgb(0, 0, 0, 0.1),
+    0 2px 4px -2px rgb(0, 0, 0, 0.1);
 }
 
 /* 2xl */
