@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { CarProps } from "../../types";
 import { calculateCarRent } from "../../utils";
+import styles from "./CarCard.module.css";
 
 type CarCardProps = {
   car: CarProps;
@@ -18,40 +19,32 @@ const CarCard = ({ car }: CarCardProps) => {
         </h2>
       </div>
 
-      <p
-        style={{
-          display: "flex",
-          marginTop: "1.5rem",
-          fontSize: "32px",
-          fontWeight: "800",
-        }}
-      >
-        <span
-          style={{
-            alignSelf: "flex-start",
-            fontSize: "14px",
-            fontWeight: "600",
-          }}
-        >
-          $
-        </span>
-          {carRent}
-
-        <span
-          style={{
-            alignSelf: "flex-end",
-            fontSize: "14px",
-            fontWeight: "500",
-          }}
-        >
-          
-          /day
-        </span>
+      <p className={styles.carRentContainer}>
+        <span className={styles.carRentSpanOne}>$</span>
+        {carRent}
+        <span className={styles.carRentSpanTwo}>/day</span>
       </p>
 
+      <div className={styles.containerImage}>
+        <Image
+          src="/hero.png"
+          alt="car model"
+          fill
+          priority
+          style={{ objectFit: "contain" }}
+        />
+      </div>
 
-      <div style={{ position: 'relative', width: '100%', height: '10rem', margin: '0.75rem 0', objectFit: 'contain' }}>
-          <Image src='/hero.png' alt="car model" width={110} height={80}/>
+      <div className={styles.transmissionContainer}>
+        <div className={styles.transmissionContainerTwo}>
+          <div className={styles.transmissionContainerThree}>
+            <Image src='/steering-wheel.svg' alt="steering wheel"
+            width={40} height={40}/>
+            <p>
+              {transmission === 'a' ? 'Automatic' : 'Manual'}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
