@@ -237,14 +237,15 @@
   padding-top: 3.5rem;
 }
 
-.car-card > * {
+.car-card{
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
   justify-content: center;
   align-items: center;
   color: var(--primary-black);
-  background-color: var(--primary-blue-100);
+  /* background-color: var(--primary-blue-100); */
+  background-color: rgb(234, 222, 208);
   border-radius: 1.5rem;
 }
 
