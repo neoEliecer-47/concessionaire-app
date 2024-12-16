@@ -1,8 +1,11 @@
+'use client'
+
 import Image from "next/image";
 import { CarProps } from "../../types";
 import { calculateCarRent } from "../../utils";
 import styles from "./CarCard.module.css";
 import CustomButton from "./CustomButton";
+import { useState } from "react";
 
 type CarCardProps = {
   car: CarProps;
@@ -11,6 +14,7 @@ type CarCardProps = {
 const CarCard = ({ car }: CarCardProps) => {
   const { city_mpg, year, make, model, transmission, drive } = car;
   const carRent = calculateCarRent(city_mpg, year);
+  const [open, setOpen] = useState<boolean>(false)
 
   return (
     <div className="car-card">
@@ -66,6 +70,7 @@ const CarCard = ({ car }: CarCardProps) => {
             containerStyles="buttonStylesCarCard"
             textStyles="textStylesCarCard"
             rightIcon="/right-arrow.svg"
+            handleClick={()=> setOpen(true)}
           />
         </div>
       </div>
