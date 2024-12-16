@@ -274,7 +274,7 @@
 }
 
 .car-card__btn-container{
-  display: flex;
+  display: none;
   position: absolute;
   bottom: 8px;
   width: 100%;
