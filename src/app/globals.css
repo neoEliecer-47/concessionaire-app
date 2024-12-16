@@ -272,9 +272,9 @@
 }
 
 .car-card__btn-container{
-  display: none;
+  display: flex;
   position: absolute;
-  bottom: 6px;
+  bottom: 8px;
   width: 100%;
   z-index: 10;
   transition: all 1s ease;

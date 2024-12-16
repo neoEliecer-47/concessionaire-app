@@ -2,6 +2,13 @@
     flex: 1;
     border-color: white;
     outline: 2px solid transparent; 
-
+    margin-left: 1rem;
 outline-offset: 2px;
+}
+
+.rightIconStyles{
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
 }

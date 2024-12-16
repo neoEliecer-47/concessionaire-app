@@ -13,9 +13,14 @@ const CustomButton = ( { title, containerStyles, handleClick, btnType, rightIcon
       className={classNames('custom-btn', containerStyles)}
       onClick={handleClick}
     >
-        <span className={classNames(styles.spanButton)}>
+        <span className={classNames(styles.spanButton, textStyles)}>
             {title}
         </span>
+        {rightIcon && (
+          <div className={styles.rightIconStyles}>
+            <Image src={rightIcon} alt="right icon" fill style={{ objectFit: 'contain', padding: '0' }}/>
+          </div>
+        )}
     </button>
   );
 };
