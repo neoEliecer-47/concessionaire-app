@@ -39,30 +39,34 @@ const CarCard = ({ car }: CarCardProps) => {
       <div className={styles.transmissionContainer}>
         <div className={styles.transmissionContainerTwo}>
           <div className={styles.transmissionContainerThree}>
-            <Image src='/steering-wheel.svg' alt="steering wheel"
-            width={40} height={40}/>
-            <p>
-              {transmission === 'a' ? 'Automatic' : 'Manual'}
-            </p>
+            <Image
+              src="/steering-wheel.svg"
+              alt="steering wheel"
+              width={40}
+              height={40}
+            />
+            <p>{transmission === "a" ? "Automatic" : "Manual"}</p>
           </div>
           <div className={styles.transmissionContainerThree}>
-            <Image src='/tire.svg' alt="tire"
-            width={40} height={40}/>
-            <p>
-              {drive.toLocaleUpperCase()}
-            </p>
+            <Image src="/tire.svg" alt="tire" width={40} height={40} />
+            <p>{drive.toLocaleUpperCase()}</p>
           </div>
           <div className={styles.transmissionContainerThree}>
-            <Image src='/gas.svg' alt="gas"
-            width={30} height={30}/>
-            <p >
-              {city_mpg} MPG
-            </p>
+            <Image src="/gas.svg" alt="gas" width={30} height={30} />
+            <p>{city_mpg} MPG</p>
           </div>
         </div>
 
-        <div className='car-card__btn-container'>
-          <CustomButton title="View More" containerStyles='buttonStylesCarCard'/>
+        <div
+          className="car-card__btn-container"
+          style={{ transition: "all 500ms ease" }}
+        >
+          <CustomButton
+            title="View More"
+            containerStyles="buttonStylesCarCard"
+            textStyles="textStylesCarCard"
+            rightIcon="/right-arrow.svg"
+          />
         </div>
       </div>
     </div>

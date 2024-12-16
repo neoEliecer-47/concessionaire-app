@@ -247,6 +247,7 @@
   /* background-color: var(--primary-blue-100); */
   background-color: rgb(234, 222, 208);
   border-radius: 1.5rem;
+  transition: all 500ms ease;
 }
 
 .car-card:hover {
@@ -276,7 +277,8 @@
   bottom: 6px;
   width: 100%;
   z-index: 10;
-  transition: all 2s ease-in;
+  transition: all 1s ease;
+ 
   
 }
 
@@ -286,13 +288,15 @@
   border-radius: 9999px;
   background-color: var(--primary-blue);
   
-}
-.car-card__btn-container:hover > .buttonStylesCarCard {
-  display: flex;
- 
   
 }
 
+.textStylesCarCard{
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1rem;
+}
 
 /* 2xl */
 @media screen and (min-width: 1536px) {

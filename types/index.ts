@@ -5,7 +5,9 @@ export type CustomButtonProps = {
     title: string,
     containerStyles?: string,
     btnType?: "button" | "submit",
-    handleClick?: MouseEventHandler<HTMLButtonElement>;
+    handleClick?: MouseEventHandler<HTMLButtonElement>,
+    textStyles?: string,
+    rightIcon?: string
 }
 
 export type CustomFilterProps = {
