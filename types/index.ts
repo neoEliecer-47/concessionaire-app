@@ -35,6 +35,12 @@ export type CarProps = {
     year: number
 }
 
+export type CarDetailsProps = {
+    isOpen: boolean,
+    closeModal: MouseEventHandler<HTMLButtonElement>,
+    car: CarProps
+}
+
 // export type CarCardProps = {
 //     car: CarProps;
 //   };
