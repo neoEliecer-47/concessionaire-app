@@ -6,7 +6,7 @@ import { calculateCarRent } from "../../utils";
 import styles from "./CarCard.module.css";
 import CustomButton from "./CustomButton";
 import { useState } from "react";
-import CarDetails from "./CarDetails";
+import CarModalDetails from "./CarModalDetails";
 
 type CarCardProps = {
   car: CarProps;
@@ -17,6 +17,11 @@ const CarCard = ({ car }: CarCardProps) => {
   const carRent = calculateCarRent(city_mpg, year);
   const [open, setOpen] = useState<boolean>(false)
   const [isOpen, setIsOpen] = useState<boolean>(false)
+
+
+  function toggleModal(){
+    setIsOpen(!isOpen)
+  }
 
   return (
     <div className="car-card">
@@ -72,12 +77,14 @@ const CarCard = ({ car }: CarCardProps) => {
             containerStyles="buttonStylesCarCard"
             textStyles="textStylesCarCard"
             rightIcon="/right-arrow.svg"
-            handleClick={()=> setOpen(true)}
+            handleClick={()=> setIsOpen(true)}
           />
         </div>
       </div>
 
-      <CarDetails isOpen={isOpen} closeModal={()=>setIsOpen(false)} car={car}/>
+      {isOpen && (
+        <CarModalDetails isOpen={isOpen} closeModal={()=>setIsOpen(false)} car={car}/>
+      )}
     </div>
   );
 };

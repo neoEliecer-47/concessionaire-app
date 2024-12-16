@@ -35,9 +35,9 @@ export type CarProps = {
     year: number
 }
 
-export type CarDetailsProps = {
+export type CarModalDetailsProps = {
     isOpen: boolean,
-    closeModal: MouseEventHandler<HTMLButtonElement>,
+    closeModal: ()=> void,
     car: CarProps
 }
 
