@@ -2,6 +2,7 @@ import Image from "next/image";
 import { CarProps } from "../../types";
 import { calculateCarRent } from "../../utils";
 import styles from "./CarCard.module.css";
+import CustomButton from "./CustomButton";
 
 type CarCardProps = {
   car: CarProps;
@@ -44,6 +45,24 @@ const CarCard = ({ car }: CarCardProps) => {
               {transmission === 'a' ? 'Automatic' : 'Manual'}
             </p>
           </div>
+          <div className={styles.transmissionContainerThree}>
+            <Image src='/tire.svg' alt="tire"
+            width={40} height={40}/>
+            <p>
+              {drive.toLocaleUpperCase()}
+            </p>
+          </div>
+          <div className={styles.transmissionContainerThree}>
+            <Image src='/gas.svg' alt="gas"
+            width={30} height={30}/>
+            <p >
+              {city_mpg} MPG
+            </p>
+          </div>
+        </div>
+
+        <div className='car-card__btn-container'>
+          <CustomButton title="View More" containerStyles='buttonStylesCarCard'/>
         </div>
       </div>
     </div>
