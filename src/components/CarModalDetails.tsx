@@ -1,14 +1,26 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { CarModalDetailsProps } from "../../types";
 import styles from "./CarModalDetails.module.css";
+import classNames from "classnames";
 
 const CarModalDetails = ({ isOpen, car, onClick }: CarModalDetailsProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
+  const [isClosing, setIsClosing] = useState<boolean>(false);
+
+  function handleCloseModal() {
+    setIsClosing(true); //trigger the closing animation
+
+    //wait for the animation to complete
+    setTimeout(() => {
+      setIsClosing(false);
+      onClick(false);
+    }, 450);
+  }
 
   function handleClickOutside(e: MouseEvent) {
     if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
-      onClick(false);
+      handleCloseModal();
     }
   }
 
@@ -22,8 +34,14 @@ const CarModalDetails = ({ isOpen, car, onClick }: CarModalDetailsProps) => {
 
   return (
     <div className={styles.modalOverley}>
-      <div className={styles.modalContent} ref={modalRef}>
-        <button style={{ zIndex: "1000" }} onClick={() => onClick(false)}>
+      <div
+        className={classNames(
+          styles.modalContent,
+          isClosing ? styles.modalAnimationOut : ""
+        )}
+        ref={modalRef}
+      >
+        <button style={{ zIndex: "1000" }} onClick={handleCloseModal}>
           button
         </button>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus sit

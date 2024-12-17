@@ -39,15 +39,30 @@
   height: 20rem;
   width: 20rem;
   background-color: bisque;
-  animation: 1s ease modal-animation;
+  animation: 1s ease modal-animation-in;
   transition: all 250ms ease;
 }
 
-@keyframes modal-animation {
+.modalAnimationOut{
+  animation: 1s ease modal-animation-out;
+ 
+}
+
+
+@keyframes modal-animation-in {
   from {
     transform: scale(0.3);
   }
   to{
     transform: scale(1);
+  }
+}
+
+@keyframes modal-animation-out {
+  from {
+    transform: scale(1);
+  }
+  to{
+    transform: scale(0);
   }
 }
