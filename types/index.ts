@@ -37,7 +37,7 @@ export type CarProps = {
 
 export type CarModalDetailsProps = {
     isOpen: boolean,
-    closeModal: ()=> void,
+    onClick: React.Dispatch<React.SetStateAction<boolean>>,
     car: CarProps
 }
 
