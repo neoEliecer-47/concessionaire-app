@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { CarModalDetailsProps } from "../../types";
 import styles from "./CarModalDetails.module.css";
 import classNames from "classnames";
+import Image from "next/image";
 
 const CarModalDetails = ({ isOpen, car, onClick }: CarModalDetailsProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
@@ -15,7 +16,7 @@ const CarModalDetails = ({ isOpen, car, onClick }: CarModalDetailsProps) => {
     setTimeout(() => {
       setIsClosing(false);
       onClick(false);
-    }, 450);
+    }, 220);
   }
 
   function handleClickOutside(e: MouseEvent) {
@@ -41,13 +42,38 @@ const CarModalDetails = ({ isOpen, car, onClick }: CarModalDetailsProps) => {
         )}
         ref={modalRef}
       >
-        <button style={{ zIndex: "1000" }} onClick={handleCloseModal}>
-          button
+        <button
+          style={{ zIndex: "1000", position: 'absolute', right: '50px', top: '-50px' }}
+          onClick={handleCloseModal}
+          type="button"
+        >
+          <Image
+            src="/close.svg"
+            alt="close"
+            width={20}
+            height={20}
+            style={{ objectFit: "contain", padding: "0" }}
+          />
         </button>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus sit
-        molestias officia necessitatibus modi accusamus suscipit illum
-        voluptatem ipsum! Voluptatibus dolorem accusamus eaque similique numquam
-        delectus vitae, rem magni ea.
+
+        <div className={styles.content}>
+          <div className={styles.backgroundImageContainer} style={{ position: 'relative' }}>
+            <Image
+              src="/hero.png"
+              alt="car model"
+              fill
+              priority
+              style={{ objectFit: "contain" }}
+            />
+          </div>
+
+          <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia harum
+            cum et, ipsam quasi vel tempora sunt sequi! Delectus, quibusdam.
+            Cupiditate corporis nulla animi nihil praesentium ex ab repellat
+            dolore.
+          </div>
+        </div>
       </div>
       <div className={styles.bgBlur} />
     </div>
