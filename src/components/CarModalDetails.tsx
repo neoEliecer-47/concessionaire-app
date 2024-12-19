@@ -93,11 +93,16 @@ const CarModalDetails = ({ isOpen, car, onClick }: CarModalDetailsProps) => {
 
           </div>
 
-          <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia harum
-            cum et, ipsam quasi vel tempora sunt sequi! Delectus, quibusdam.
-            Cupiditate corporis nulla animi nihil praesentium ex ab repellat
-            dolore.
+          <div className={styles.mainContentContainer}>
+           <h2 style={{ fontWeight: '600', fontSize: '1.25rem', textTransform:'capitalize' }}>{car.make} - {car.model}</h2>
+           <div className={styles.restContentContainer}>
+              {Object.entries(car).map(([key, value])=>(
+                <div key={key} className={styles.restContent}>
+                  <h4>{key}</h4>
+                  <p>{value}</p>
+                </div>
+              ))}
+           </div>
           </div>
         </div>
       </div>
