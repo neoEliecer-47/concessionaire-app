@@ -69,6 +69,20 @@
   border-radius: 0.5rem;
 }
 
+.descriptionImagesContainer{
+  display: flex;
+  gap: 0.5rem;
+}
+
+.descriptionImagesContainerTwo{
+  flex: 1;
+  position: relative;
+  width: 100%;
+  height: 6rem;
+  background-color: var(--primary-blue-100);
+  border-radius: 0.5rem;
+}
+
 
 @keyframes modal-animation-in {
   from {
