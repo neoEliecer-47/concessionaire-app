@@ -53,6 +53,13 @@ const CarModalDetails = ({ isOpen, car, onClick }: CarModalDetailsProps) => {
                 position: "absolute",
                 right: "15px",
                 top: "10px",
+                backgroundColor: 'rgba(252, 252, 252, 0.6)',
+                border: 'none',
+                borderRadius: '9999px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '5px 5px'
               }}
               onClick={handleCloseModal}
               type="button"
@@ -62,7 +69,7 @@ const CarModalDetails = ({ isOpen, car, onClick }: CarModalDetailsProps) => {
                 alt="close"
                 width={20}
                 height={20}
-                style={{ objectFit: "contain", padding: "0" }}
+                style={{ objectFit: "contain", padding: "0", opacity: '1' }}
               />
             </button>
             <Image
