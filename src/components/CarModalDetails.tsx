@@ -42,22 +42,29 @@ const CarModalDetails = ({ isOpen, car, onClick }: CarModalDetailsProps) => {
         )}
         ref={modalRef}
       >
-        <button
-          style={{ zIndex: "1000", position: 'absolute', right: '50px', top: '-50px' }}
-          onClick={handleCloseModal}
-          type="button"
-        >
-          <Image
-            src="/close.svg"
-            alt="close"
-            width={20}
-            height={20}
-            style={{ objectFit: "contain", padding: "0" }}
-          />
-        </button>
-
         <div className={styles.content}>
-          <div className={styles.backgroundImageContainer} style={{ position: 'relative' }}>
+          <div
+            className={styles.backgroundImageContainer}
+            style={{ position: "relative" }}
+          >
+            <button
+              style={{
+                zIndex: "1000",
+                position: "absolute",
+                right: "15px",
+                top: "10px",
+              }}
+              onClick={handleCloseModal}
+              type="button"
+            >
+              <Image
+                src="/close.svg"
+                alt="close"
+                width={20}
+                height={20}
+                style={{ objectFit: "contain", padding: "0" }}
+              />
+            </button>
             <Image
               src="/hero.png"
               alt="car model"
