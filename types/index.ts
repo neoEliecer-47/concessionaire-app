@@ -35,6 +35,12 @@ export type CarProps = {
     year: number
 }
 
+export type CarModalDetailsProps = {
+    isOpen: boolean,
+    onClick: React.Dispatch<React.SetStateAction<boolean>>,
+    car: CarProps
+}
+
 // export type CarCardProps = {
 //     car: CarProps;
 //   };

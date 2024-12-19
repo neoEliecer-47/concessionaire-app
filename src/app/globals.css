@@ -85,6 +85,7 @@
   outline: 1px solid transparent;
   outline-offset: 1px;
   border: none;
+  
 }
 
 /* footer */
@@ -245,9 +246,10 @@
   align-items: center;
   color: var(--primary-black);
   /* background-color: var(--primary-blue-100); */
-  background-color: rgb(234, 222, 208);
+  background-color: rgb(234, 222, 208); 
   border-radius: 1.5rem;
   transition: all 500ms ease;
+  
 }
 
 .car-card:hover {
@@ -272,7 +274,7 @@
 }
 
 .car-card__btn-container{
-  display: flex;
+  display: none;
   position: absolute;
   bottom: 8px;
   width: 100%;
@@ -287,7 +289,7 @@
   padding: 1.2rem 0;
   border-radius: 9999px;
   background-color: var(--primary-blue);
-  
+  z-index: 0;
   
 }
 
