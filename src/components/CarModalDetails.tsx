@@ -4,11 +4,23 @@ import { CarModalDetailsProps } from "../../types";
 import styles from "./CarModalDetails.module.css";
 import classNames from "classnames";
 import Image from "next/image";
+import ArrowScroll from "./icons/ArrowScroll";
 
 const CarModalDetails = ({ isOpen, car, onClick }: CarModalDetailsProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
+  //const scrollableRef = useRef<HTMLDivElement | null>(null)
   const [isClosing, setIsClosing] = useState<boolean>(false);
 
+  function scrollDown(){
+   if(modalRef.current){
+    modalRef.current.scrollBy({
+      top: 300,
+      behavior: 'smooth'
+    })
+   }
+  }
+  
+  
   function handleCloseModal() {
     setIsClosing(true); //trigger the closing animation
 
@@ -93,11 +105,23 @@ const CarModalDetails = ({ isOpen, car, onClick }: CarModalDetailsProps) => {
 
           </div>
 
-          <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia harum
-            cum et, ipsam quasi vel tempora sunt sequi! Delectus, quibusdam.
-            Cupiditate corporis nulla animi nihil praesentium ex ab repellat
-            dolore.
+          <div className={styles.mainContentContainer}>
+           <h2 style={{ fontWeight: '600', fontSize: '1.25rem', textTransform:'capitalize' }}>{car.make} - {car.model}</h2>
+           <div className={styles.restContentContainer}>
+              {Object.entries(car).map(([key, value])=>(
+                <div key={key} className={styles.restContent}>
+                  <h4 className={styles.keyStyles}>{key.split('_').join(' ')}</h4>
+                  <p className={styles.valueStyles}>{value}</p>
+                </div>
+              ))}
+              <section className={styles.buttonScrollContainer}> 
+                <button className={styles.buttonScroll} onClick={scrollDown}>
+                  <ArrowScroll />
+                </button>
+              </section>
+
+        
+           </div>
           </div>
         </div>
       </div>

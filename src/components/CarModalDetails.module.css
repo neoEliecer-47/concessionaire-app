@@ -9,8 +9,7 @@
   align-items: center;
   margin: 0 auto;
   z-index: 2000;
-  
-  
+
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -38,28 +37,28 @@
   right: 0;
   max-width: 32rem;
   max-height: 90vh;
-  background-color: bisque;
+  background-color: rgb(243, 231, 216);
   animation: 250ms ease-in modal-animation-in;
   transition: all 250ms ease;
   overflow-y: auto;
-  box-shadow: 0 0 #0000, 0 0 #0000, 0 20px 25px -5px rgb(0,0,0,0.1), 0 8px 10px -6px rgb(0,0,0,0.1);
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 20px 25px -5px rgb(0, 0, 0, 0.1),
+    0 8px 10px -6px rgb(0, 0, 0, 0.1);
   margin: 0 0.5rem;
-  
+  scrollbar-width: none;
 }
 
-.modalAnimationOut{
+.modalAnimationOut {
   animation: 250ms ease-out modal-animation-out;
- 
 }
 
-.content{
+.content {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.backgroundImageContainer{
+.backgroundImageContainer {
   position: relative;
   height: 10rem;
   width: 100%;
@@ -69,12 +68,12 @@
   border-radius: 0.5rem;
 }
 
-.descriptionImagesContainer{
+.descriptionImagesContainer {
   display: flex;
   gap: 0.5rem;
 }
 
-.descriptionImagesContainerTwo{
+.descriptionImagesContainerTwo {
   flex: 1;
   position: relative;
   width: 100%;
@@ -83,12 +82,63 @@
   border-radius: 0.5rem;
 }
 
+.mainContentContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.restContentContainer {
+  position: relative;
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.restContent {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  text-align: right;
+  font-size: medium;
+}
+
+.buttonScrollContainer {
+  position: absolute;
+  bottom: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.buttonScroll {
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: dotted;
+  border-width: 0.7px;
+  width: 2.3rem;
+  height: 2.3rem;
+}
+
+.keyStyles{
+  color: var(--primary-grey);
+  text-transform: capitalize;
+}
+
+.valueStyles{
+  color: var(--primary-black);
+  font-weight: 600;
+}
 
 @keyframes modal-animation-in {
   from {
     transform: scale(0);
   }
-  to{
+  to {
     transform: scale(1);
   }
 }
@@ -97,13 +147,47 @@
   from {
     transform: scale(1);
   }
-  to{
+  to {
     transform: scale(0);
   }
 }
 
-@media screen and (min-width: 1280px){
-  .modalContent{
+@media screen and (min-width: 1280px) {
+  .modalContent {
     width: 70vw;
+  }
+}
+
+@media screen and (min-width: 1580px) {
+  .buttonScroll {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .buttonScrollContainer {
+    bottom: 50%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .buttonScrollContainer {
+    bottom: 65%;
+  }
+}
+
+@media screen and (min-width: 410px) and (max-width: 431px) {
+  .buttonScrollContainer {
+    display: none;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 409px) {
+  .buttonScrollContainer {
+    bottom: 60%;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 374px) {
+  .buttonScrollContainer {
+    bottom: 65%;
   }
 }
