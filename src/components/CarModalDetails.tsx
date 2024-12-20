@@ -110,8 +110,8 @@ const CarModalDetails = ({ isOpen, car, onClick }: CarModalDetailsProps) => {
            <div className={styles.restContentContainer}>
               {Object.entries(car).map(([key, value])=>(
                 <div key={key} className={styles.restContent}>
-                  <h4>{key}</h4>
-                  <p>{value}</p>
+                  <h4 className={styles.keyStyles}>{key.split('_').join(' ')}</h4>
+                  <p className={styles.valueStyles}>{value}</p>
                 </div>
               ))}
               <section className={styles.buttonScrollContainer}> 
@@ -119,6 +119,8 @@ const CarModalDetails = ({ isOpen, car, onClick }: CarModalDetailsProps) => {
                   <ArrowScroll />
                 </button>
               </section>
+
+        
            </div>
           </div>
         </div>

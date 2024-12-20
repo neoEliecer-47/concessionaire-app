@@ -7,7 +7,7 @@ const ArrowScroll = () => {
       strokeWidth={1.2}
       stroke="currentColor"
       className="size-6"
-      style={{ padding: '0' }}
+      style={{ padding: '2px' }}
     >
       <path
         strokeLinecap="round"
