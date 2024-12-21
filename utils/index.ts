@@ -1,6 +1,8 @@
+import { CarProps } from "../types";
+
 export async function fetchCars() {
   var model = "corolla";
-  const url = "https://api.api-ninjas.com/v1/cars?model=corolla";
+  const url = "https://api.api-ninjas.com/v1/cars?model=carrera";
   const apiKey = process.env.API_KEY;
   const options = {
     method: "GET",
@@ -32,3 +34,10 @@ export function calculateCarRent(city_mpg: number, year: number) {
 
   return rentalRatePerDay.toFixed(0);
 }
+
+export function generateCarImageUrl(car: CarProps, angel?: string){
+  
+}
+
+//pexels api key
+//2tXzdGN2KHvcJ9pJ5ru4yEuSVHexCq3APfQ20LTHhPqw751qEK6VcHMz

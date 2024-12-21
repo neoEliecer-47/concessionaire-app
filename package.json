@@ -16,6 +16,7 @@
     "classnames": "^2.5.1",
     "dotenv": "^16.4.7",
     "next": "15.0.4",
+    "pexels": "^1.4.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "typescript": "5.7.2"
