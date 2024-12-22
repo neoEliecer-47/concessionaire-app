@@ -5,6 +5,7 @@ import styles from "./CarModalDetails.module.css";
 import classNames from "classnames";
 import Image from "next/image";
 import ArrowScroll from "./icons/ArrowScroll";
+import { generateCarImageUrl } from "../../utils";
 
 const CarModalDetails = ({ isOpen, car, onClick }: CarModalDetailsProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
@@ -85,7 +86,7 @@ const CarModalDetails = ({ isOpen, car, onClick }: CarModalDetailsProps) => {
               />
             </button>
             <Image
-              src="/hero.png"
+              src={generateCarImageUrl(car)}
               alt="car model"
               fill
               priority
@@ -94,13 +95,13 @@ const CarModalDetails = ({ isOpen, car, onClick }: CarModalDetailsProps) => {
           </div>
           <div className={styles.descriptionImagesContainer}>
             <div className={styles.descriptionImagesContainerTwo}>
-              <Image src='/hero.png' alt="car" fill priority style={{ objectFit: 'contain' }} />
+              <Image src={generateCarImageUrl(car, '29')} alt="car" fill priority style={{ objectFit: 'contain' }} />
             </div>
             <div className={styles.descriptionImagesContainerTwo}>
-              <Image src='/hero.png' alt="car" fill priority style={{ objectFit: 'contain' }} />
+              <Image src={generateCarImageUrl(car, '33')} alt="car" fill priority style={{ objectFit: 'contain' }} />
             </div>
             <div className={styles.descriptionImagesContainerTwo}>
-              <Image src='/hero.png' alt="car" fill priority style={{ objectFit: 'contain' }} />
+              <Image src={generateCarImageUrl(car, '13')} alt="car" fill priority style={{ objectFit: 'contain' }} />
             </div>
 
           </div>

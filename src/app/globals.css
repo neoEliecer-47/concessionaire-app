@@ -5,6 +5,7 @@
   --primary-black: #2b2c35;
   --primary-blue-100: #f5f8ff;
   --primary-grey: #747A88;
+  --complete: 9999px
 }
 
 * {
@@ -112,6 +113,10 @@
   display: flex;
   justify-content: center;
   gap: 2.5rem;
+}
+
+input:focus {
+  border: 1px solid var(--primary-blue);
 }
 
 /* xl */
