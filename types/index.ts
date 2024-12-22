@@ -41,6 +41,11 @@ export type CarModalDetailsProps = {
     car: CarProps
 }
 
+
+export type searchButtonProps = {
+    otherClasses?: string
+}
+
 // export type CarCardProps = {
 //     car: CarProps;
 //   };
