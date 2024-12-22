@@ -3,12 +3,13 @@ import styles from "./page.module.css";
 import Hero from "@/components/Hero";
 import SearchBar from "@/components/SearchBar";
 import CustomFilter from "@/components/CustomFilter";
-import { fetchCars } from "../../utils";
+import { fetchCars, generateCarImageUrl } from "../../utils";
 import CarCard from "@/components/CarCard";
 
 export default async function Home() {
   const allCars = await fetchCars();
   const allCars2 = true
+  const carImages =  generateCarImageUrl();
 
   return (
     <main className={styles.main}>

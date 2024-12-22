@@ -1,3 +1,9 @@
+import { createClient } from "pexels";
+
+const client = createClient('2tXzdGN2KHvcJ9pJ5ru4yEuSVHexCq3APfQ20LTHhPqw751qEK6VcHMz');
+const query = 'porsche 911 carrera';
+
+
 import { CarProps } from "../types";
 
 export async function fetchCars() {
@@ -35,9 +41,16 @@ export function calculateCarRent(city_mpg: number, year: number) {
   return rentalRatePerDay.toFixed(0);
 }
 
-export function generateCarImageUrl(car: CarProps, angel?: string){
-  
+export function generateCarImageUrl(query: string) {
+  client.photos.search({ query, per_page: 3 }).then((photos) => {
+    console.log(photos);
+    return photos;    });
 }
 
 //pexels api key
 //2tXzdGN2KHvcJ9pJ5ru4yEuSVHexCq3APfQ20LTHhPqw751qEK6VcHMz
+
+
+//pixabay api key
+//
+//https://pixabay.com/api/?key=47766214-a33a1bcd22a8f0c9e5f1ad979&q=chevrolet%20aveo%202008&image_type=photo
