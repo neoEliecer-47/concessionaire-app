@@ -13,8 +13,8 @@ const SearchButton = ({ otherClasses }: searchButtonProps) => {
       <Image
         src="/magnifying-glass.svg"
         alt="magnifying glass"
-        width={40}
-        height={40}
+        width={35}
+        height={35}
         style={{ objectFit: "contain", padding: "0" }}
       />
     </button>
