@@ -8,8 +8,8 @@ import CarCard from "@/components/CarCard";
 
 export default async function Home() {
   const allCars = await fetchCars();
-  const allCars2 = true
-  const carImages =  generateCarImageUrl();
+  console.log(allCars)
+
 
   return (
     <main className={styles.main}>
