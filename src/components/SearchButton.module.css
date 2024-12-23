@@ -13,8 +13,19 @@
     border-radius: 0  var(--complete) var(--complete) 0;
 }
 
-@media screen and (max-width: 640px) {
+.desktopClass{
+    background-color: var(--primary-blue);
+}
+
+@media screen and (min-width: 640px) {
     .searchButtonContainer {
        display: none;
     }
 }
+
+@media screen and (min-width: 640px) {
+    .desktopClass {
+       display: none;
+    }
+}
+
