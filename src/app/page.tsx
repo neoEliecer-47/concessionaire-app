@@ -9,11 +9,11 @@ import { fuels, manufacturers } from "../../constants";
 
 export default async function Home({ searchParams }) {
   const allCars = await fetchCars({
-    manufacturer: searchParams.get("manufacturer") || '',
-    model: searchParams.get("model") || '',
-    year: searchParams.get("year") || 2024,
-    fuel: searchParams.get("fuel") || '',
-    limit: searchParams.get("limit") || 10,
+    manufacturer: searchParams?.manufacturer || '',
+    model: searchParams?.model || '',
+    year: searchParams?.year || 2010,
+    fuel: searchParams?.fuel || '',
+    limit: searchParams?.limit || 10,
   });
  
 
