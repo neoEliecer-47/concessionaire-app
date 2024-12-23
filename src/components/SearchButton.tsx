@@ -7,7 +7,8 @@ const SearchButton = ({ otherClasses }: searchButtonProps) => {
   return (
     <button
       type="submit"
-      className={classNames(styles.searchButtonContainer, `${otherClasses}`)}
+      className={styles.searchButtonContainer}
+     
     >
       Search
       <Image

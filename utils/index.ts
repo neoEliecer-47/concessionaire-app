@@ -1,25 +1,20 @@
-import { createClient } from "pexels";
+import { CarProps, FiltersProps } from "../types";
 
-const client = createClient('2tXzdGN2KHvcJ9pJ5ru4yEuSVHexCq3APfQ20LTHhPqw751qEK6VcHMz');
-const query = 'chevrolet aveo 2018';
+export async function fetchCars(filters: FiltersProps) {
+  //model=aveo
 
+  const { model, year, manufacturer, fuel, limit } = filters;
 
-import { CarProps } from "../types";
-
-export async function fetchCars() {
-  var model = "corolla";
-  const url = "https://api.api-ninjas.com/v1/cars?model=aveo";
-  const apiKey = process.env.API_KEY;
-  const options = {
-    method: "GET",
-    headers: {
-      "X-Api-Key": "mpeQZUj/cJcv7C/VZ0YeXw==nvpSwu8fXiY7yetH",
-      contentType: "application/json",
-    },
+  const url = `https://api.api-ninjas.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`;
+  
+ 
+  const headers: HeadersInit = {
+    "X-Api-Key": process.env.NEXT_PUBLIC_API_KEY || "",
+    contentType: "application/json",
   };
 
   try {
-    const res = await fetch(url, options);
+    const res = await fetch(url, { headers });
     const data = await res.json();
 
     return data;
@@ -41,22 +36,20 @@ export function calculateCarRent(city_mpg: number, year: number) {
   return rentalRatePerDay.toFixed(0);
 }
 
-export function generateCarImageUrl(car:  CarProps, angle?: string) {
-  
-  const url =  new URL('https://cdn.imagin.studio/getimage')
+export function generateCarImageUrl(car: CarProps, angle?: string) {
+  const url = new URL("https://cdn.imagin.studio/getimage");
 
-  const { make, model, year } = car
+  const { make, model, year } = car;
 
-  
-  url.searchParams.append('customer', 'img')
-  url.searchParams.append('make', make)
-  url.searchParams.append('modelFamily', model.split(' ')[0])
-  url.searchParams.append('zoomType', 'fullscreen')
-  url.searchParams.append('modelYear', `${year}`)
-  url.searchParams.append('angle', `${angle}`)
-  console.log(url)
-  return `${url}`
-  
+  url.searchParams.append("customer", "img");
+  url.searchParams.append("make", make);
+  url.searchParams.append("modelFamily", model.split(" ")[0]);
+  url.searchParams.append("zoomType", "fullscreen");
+  url.searchParams.append("modelYear", `${year}`);
+  url.searchParams.append("angle", `${angle}`);
+  console.log(url);
+  return `${url}`;
+
   // client.photos.search({ query, per_page: 3 }).then((photos) => {
   //   console.log(photos);
   //   return photos;    });
@@ -64,7 +57,6 @@ export function generateCarImageUrl(car:  CarProps, angle?: string) {
 
 //pexels api key
 //2tXzdGN2KHvcJ9pJ5ru4yEuSVHexCq3APfQ20LTHhPqw751qEK6VcHMz
-
 
 //pixabay api key
 //
