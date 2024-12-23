@@ -46,6 +46,14 @@ export type searchButtonProps = {
     otherClasses?: string
 }
 
+export type FiltersProps = {
+    manufacturer: string,
+    model: string,
+    year: number,
+    fuel: string,
+    limit: number,
+}
+
 // export type CarCardProps = {
 //     car: CarProps;
 //   };

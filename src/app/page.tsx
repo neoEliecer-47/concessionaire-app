@@ -5,10 +5,17 @@ import SearchBar from "@/components/SearchBar";
 import CustomFilter from "@/components/CustomFilter";
 import { fetchCars, generateCarImageUrl } from "../../utils";
 import CarCard from "@/components/CarCard";
+import { fuels, manufacturers } from "../../constants";
 
-export default async function Home() {
-  const allCars = await fetchCars();
-  console.log(allCars)
+export default async function Home({ searchParams }) {
+  const allCars = await fetchCars({
+    manufacturer: searchParams.get("manufacturer") || '',
+    model: searchParams.get("model") || '',
+    year: searchParams.get("year") || 2024,
+    fuel: searchParams.get("fuel") || '',
+    limit: searchParams.get("limit") || 10,
+  });
+ 
 
 
   return (

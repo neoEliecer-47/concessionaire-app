@@ -4,9 +4,9 @@ const client = createClient('2tXzdGN2KHvcJ9pJ5ru4yEuSVHexCq3APfQ20LTHhPqw751qEK6
 const query = 'chevrolet aveo 2018';
 
 
-import { CarProps } from "../types";
+import { CarProps, FiltersProps } from "../types";
 
-export async function fetchCars() {
+export async function fetchCars(filters: FiltersProps) {
   var model = "corolla";
   const url = "https://api.api-ninjas.com/v1/cars?model=aveo";
   const apiKey = process.env.API_KEY;
