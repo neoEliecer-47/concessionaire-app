@@ -8,7 +8,7 @@ import classNames from "classnames";
 import { useClickOutsideDetector } from "../../hooks/useClickOutsideDetector";
 
 interface MyValues {
-  year: string
+  item: string
 }
 
 type DropdownMenuProps = {
@@ -26,8 +26,8 @@ export default function DropdownMenu({
  
   paramValue,
 }: DropdownMenuProps) {
-  const [open, setOpen] = useState(false);
-  const [option, setOption] = useState<number>(0);
+  const [open, setOpen] = useState<boolean>(false);
+  const [option, setOption] = useState<number | null>(null);
 
   const { dropMenuRef, isClickOutside, setIsClickOutside } = useClickOutsideDetector();
 
@@ -55,23 +55,24 @@ export default function DropdownMenu({
   //   setOpen(!open);
   // }
 
-  function getValues(item, index) {
+  function getValues(item, index){
      if (money && index === 0) {
       return "No Minimun";}
       if(item instanceof Object)
     return typeof item === "object" ? Object.values(item)[0] : item;
    }
 
-  // function buildPlaceholder(tooltip: string) {
-  //   let item = data[option];
-  //   let placeholder = "";
-  //   placeholder = getValues(item, option);
-  //   if (tooltip) return placeholder;
-  //   onValue(placeholder);
-  //   return (
-  //     placeholder?.slice(0, 10) + `${placeholder?.length > 10 ? "..." : ""}`
-  //   );
-  // }
+   function buildPlaceholder(tooltip?: string) {
+     if(option === null) return placeholder;
+    let item = data[option];
+     let currentOptionName = "";
+     currentOptionName = getValues(item, option);
+     if (tooltip) return placeholder;
+     //onValue(placeholder);
+    return (
+      currentOptionName?.slice(0, 11) + `${placeholder?.length > 10 ? "..." : ""}`
+    );
+   }
 
   useEffect(() => {
     if (isClickOutside) {
@@ -87,9 +88,9 @@ export default function DropdownMenu({
 
   return (
     // <div style={{ position: "relative", zIndex: 6,,  display: 'flex' }}>
-    <section style={{ width: "6rem", cursor: "pointer" }} ref={dropMenuRef} onClick={() => setOpen(!open)}>
-      <div>
-        {placeholder}
+    <section style={{ cursor: "pointer" }} ref={dropMenuRef} >
+      <div className={styles.placeholderContainer} onClick={() => setOpen(!open)}>
+        {buildPlaceholder()}
       </div>
       {/* <div
         className={classNames(
@@ -118,8 +119,9 @@ export default function DropdownMenu({
 
       <div
         className={styles.options}
-        style={{ padding: `${open ? "10px 0px" : "0px"}`, width: "8rem" }}
+        style={{ padding: `${open ? "10px 0px" : "0px"}`, width: "8rem", maxHeight: `${open ? '10rem' : '0px'}` }}
       >
+        
         {open &&
           data.map((item, index) => (
             <div
@@ -129,6 +131,7 @@ export default function DropdownMenu({
                 justifyContent: "space-between",
                 alignItems: "center",
               }}
+              key={index}
               onClick={() => setOption(index)}
               className={styles.containerO}
             >
@@ -136,11 +139,11 @@ export default function DropdownMenu({
                 {option === index && <CheckIcon className={styles.icon} />}
               </div>
               <div className={styles.optionButton}>
-                {money && index !== 0 && "$"}
                 {getValues(item, index)}
               </div>
             </div>
           ))}
+          
       </div>
     </section>
     // </div>

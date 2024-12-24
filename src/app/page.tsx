@@ -36,9 +36,8 @@ export default async function Home({ searchParams }: HomeProps) {
           <SearchBar />
 
           <div className="home__filter-container">
-            <CustomFilter title="fuel" />
-            {/* <CustomFilter title="year" /> */}
-            <DropdownMenu placeholder="year" data={yearsOfProduction}/>
+            <DropdownMenu placeholder="Fuel" data={fuels}/>
+            <DropdownMenu placeholder="Year" data={yearsOfProduction}/>
           </div>
         </div>
 
