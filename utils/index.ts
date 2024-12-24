@@ -6,8 +6,7 @@ export async function fetchCars(filters: FiltersProps) {
   const { model, year, manufacturer, fuel, limit } = filters;
 
   const url = `https://api.api-ninjas.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`;
-  
- 
+
   const headers: HeadersInit = {
     "X-Api-Key": process.env.NEXT_PUBLIC_API_KEY || "",
     contentType: "application/json",
@@ -47,7 +46,7 @@ export function generateCarImageUrl(car: CarProps, angle?: string) {
   url.searchParams.append("zoomType", "fullscreen");
   url.searchParams.append("modelYear", `${year}`);
   url.searchParams.append("angle", `${angle}`);
-  console.log(url);
+  
   return `${url}`;
 
   // client.photos.search({ query, per_page: 3 }).then((photos) => {
@@ -56,15 +55,11 @@ export function generateCarImageUrl(car: CarProps, angle?: string) {
 }
 
 export function updateSearchParams(type: string, value: string) {
- 
-    const searchParams = new URLSearchParams(window.location.search);
-    console.log(searchParams)
-    searchParams.set(type, value);
+  const searchParams = new URLSearchParams(window.location.search);
+  console.log({ SEARCHPARAMS: searchParams });
+  searchParams.set(type, value);
 
-    const newPathname = `${
-      window.location.pathname
-    }?${searchParams.toString()}`;
-    
-    return newPathname;
-  
+  const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
+
+  return newPathname;
 }

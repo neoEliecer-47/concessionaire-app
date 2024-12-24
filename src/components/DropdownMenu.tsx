@@ -59,7 +59,8 @@ export default function DropdownMenu({
   //   setOpen(!open);
   // }
 
-  function getValues(item: string | Object, index: number) {
+  function getValues(item: string | Object, index?: number) {
+    
     if (money && index === 0) {
       return "No Minimun";
     }
@@ -67,8 +68,11 @@ export default function DropdownMenu({
       return typeof item === "object" ? Object.values(item)[0] : item;
   }
 
-  function handleSearchParams(e: {type: string ,value: string}) {
-    const newPathname = updateSearchParams(e.type, e.value);
+  
+  function handleUpdateParams(value: string) {
+    console.log({VALUE: value})                      //year or fuel                    //years or fuels
+    const newPathname = updateSearchParams(placeholder.toLocaleLowerCase(), value.toLocaleLowerCase());
+    console.log({PATHNAME: newPathname})
     router.push(newPathname, { scroll: false });
   }
 
@@ -148,9 +152,14 @@ export default function DropdownMenu({
                 justifyContent: "space-between",
                 alignItems: "center",
               }}
+              
               key={index}
-              onClick={() => setOption(index)}
+              onClick={() => {
+                setOption(index);
+                handleUpdateParams(getValues(item));
+              }}
               className={styles.containerO}
+              
             >
               <div style={{ width: "1.3rem" }}>
                 {option === index && <CheckIcon className={styles.icon} />}
