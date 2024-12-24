@@ -27,7 +27,7 @@ export default function DropdownMenu({
   paramValue,
 }: DropdownMenuProps) {
   const [open, setOpen] = useState(false);
-  const [option, setOption] = useState<number>(0);
+  const [option, setOption] = useState<number | null>(null);
 
   const { dropMenuRef, isClickOutside, setIsClickOutside } = useClickOutsideDetector();
 
@@ -55,23 +55,24 @@ export default function DropdownMenu({
   //   setOpen(!open);
   // }
 
-  function getValues(item, index) {
+  function getValues(item, index){
      if (money && index === 0) {
       return "No Minimun";}
       if(item instanceof Object)
     return typeof item === "object" ? Object.values(item)[0] : item;
    }
 
-  // function buildPlaceholder(tooltip: string) {
-  //   let item = data[option];
-  //   let placeholder = "";
-  //   placeholder = getValues(item, option);
-  //   if (tooltip) return placeholder;
-  //   onValue(placeholder);
-  //   return (
-  //     placeholder?.slice(0, 10) + `${placeholder?.length > 10 ? "..." : ""}`
-  //   );
-  // }
+   function buildPlaceholder(tooltip?: string) {
+     if(option === null) return placeholder;
+    let item = data[option];
+     let currentOptionName = "";
+     currentOptionName = getValues(item, option);
+     if (tooltip) return placeholder;
+     //onValue(placeholder);
+    return (
+      currentOptionName?.slice(0, 10) + `${placeholder?.length > 10 ? "..." : ""}`
+    );
+   }
 
   useEffect(() => {
     if (isClickOutside) {
@@ -89,7 +90,7 @@ export default function DropdownMenu({
     // <div style={{ position: "relative", zIndex: 6,,  display: 'flex' }}>
     <section style={{ width: "6rem", cursor: "pointer" }} ref={dropMenuRef} onClick={() => setOpen(!open)}>
       <div>
-        {placeholder}
+        {buildPlaceholder()}
       </div>
       {/* <div
         className={classNames(
