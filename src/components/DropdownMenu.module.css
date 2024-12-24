@@ -53,8 +53,10 @@
   border-radius: 0.5rem;
   z-index: 9999;
   transition: all 200ms ease;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   overflow: scroll;
+  overflow-x: hidden;
+  scrollbar-width: thin;
 }
 
 .optionButton {

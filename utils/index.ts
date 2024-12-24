@@ -55,9 +55,16 @@ export function generateCarImageUrl(car: CarProps, angle?: string) {
   //   return photos;    });
 }
 
-//pexels api key
-//2tXzdGN2KHvcJ9pJ5ru4yEuSVHexCq3APfQ20LTHhPqw751qEK6VcHMz
+export function updateSearchParams(type: string, value: string) {
+ 
+    const searchParams = new URLSearchParams(window.location.search);
+    console.log(searchParams)
+    searchParams.set(type, value);
 
-//pixabay api key
-//
-//https://pixabay.com/api/?key=47766214-a33a1bcd22a8f0c9e5f1ad979&q=chevrolet%20aveo%202008&image_type=photo
+    const newPathname = `${
+      window.location.pathname
+    }?${searchParams.toString()}`;
+    
+    return newPathname;
+  
+}
