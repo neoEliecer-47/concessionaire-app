@@ -81,6 +81,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@heroicons/react@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "@heroicons/react@npm:2.2.0"
+  peerDependencies:
+    react: ">= 16 || ^19.0.0-rc"
+  checksum: 10c0/f8d3cf689b56716339c91df3542f3948115042d1e70e6bc940a3f3e347c0bc78b56aa563917fbd7ce097fe2f38ebb21bffb0db39be914cbc545a754bddae9ab4
+  languageName: node
+  linkType: hard
+
 "@img/sharp-darwin-arm64@npm:0.33.5":
   version: 0.33.5
   resolution: "@img/sharp-darwin-arm64@npm:0.33.5"
@@ -486,6 +495,7 @@ __metadata:
   resolution: "cars-app@workspace:."
   dependencies:
     "@headlessui/react": "npm:^2.2.0"
+    "@heroicons/react": "npm:^2.2.0"
     "@types/node": "npm:22.10.1"
     "@types/react": "npm:19.0.1"
     "@types/react-dom": "npm:19.0.1"
