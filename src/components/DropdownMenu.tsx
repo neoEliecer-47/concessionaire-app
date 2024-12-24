@@ -26,7 +26,7 @@ export default function DropdownMenu({
  
   paramValue,
 }: DropdownMenuProps) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
   const [option, setOption] = useState<number | null>(null);
 
   const { dropMenuRef, isClickOutside, setIsClickOutside } = useClickOutsideDetector();
@@ -70,7 +70,7 @@ export default function DropdownMenu({
      if (tooltip) return placeholder;
      //onValue(placeholder);
     return (
-      currentOptionName?.slice(0, 10) + `${placeholder?.length > 10 ? "..." : ""}`
+      currentOptionName?.slice(0, 11) + `${placeholder?.length > 10 ? "..." : ""}`
     );
    }
 
@@ -88,8 +88,8 @@ export default function DropdownMenu({
 
   return (
     // <div style={{ position: "relative", zIndex: 6,,  display: 'flex' }}>
-    <section style={{ width: "6rem", cursor: "pointer" }} ref={dropMenuRef} onClick={() => setOpen(!open)}>
-      <div>
+    <section style={{ cursor: "pointer" }} ref={dropMenuRef} >
+      <div className={styles.placeholderContainer} onClick={() => setOpen(!open)}>
         {buildPlaceholder()}
       </div>
       {/* <div
@@ -119,8 +119,9 @@ export default function DropdownMenu({
 
       <div
         className={styles.options}
-        style={{ padding: `${open ? "10px 0px" : "0px"}`, width: "8rem" }}
+        style={{ padding: `${open ? "10px 0px" : "0px"}`, width: "8rem", maxHeight: `${open ? '10rem' : '0px'}` }}
       >
+        
         {open &&
           data.map((item, index) => (
             <div
@@ -130,6 +131,7 @@ export default function DropdownMenu({
                 justifyContent: "space-between",
                 alignItems: "center",
               }}
+              key={index}
               onClick={() => setOption(index)}
               className={styles.containerO}
             >
@@ -137,11 +139,11 @@ export default function DropdownMenu({
                 {option === index && <CheckIcon className={styles.icon} />}
               </div>
               <div className={styles.optionButton}>
-                {money && index !== 0 && "$"}
                 {getValues(item, index)}
               </div>
             </div>
           ))}
+          
       </div>
     </section>
     // </div>
