@@ -1,9 +1,14 @@
+'use client'
+
 import { CustomFilterProps } from "../../types"
+import { useRouter } from "next/navigation"
 
 
 const CustomFilter = ({ title }: CustomFilterProps) => {
   return (
-    <div>CustomFilter</div>
+    <div>
+
+    </div>
   )
 }
 

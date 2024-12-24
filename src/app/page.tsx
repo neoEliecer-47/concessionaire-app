@@ -5,9 +5,12 @@ import SearchBar from "@/components/SearchBar";
 import CustomFilter from "@/components/CustomFilter";
 import { fetchCars, generateCarImageUrl } from "../../utils";
 import CarCard from "@/components/CarCard";
-import { fuels, manufacturers } from "../../constants";
+import { fuels, manufacturers, yearsOfProduction } from "../../constants";
+import { HomeProps } from "../../types";
+import DropdownMenu from "@/components/DropdownMenu";
+import { useState } from "react";
 
-export default async function Home({ searchParams }) {
+export default async function Home({ searchParams }: HomeProps) {
   const allCars = await fetchCars({
     manufacturer: searchParams?.manufacturer || '',
     model: searchParams?.model || '',
@@ -16,6 +19,7 @@ export default async function Home({ searchParams }) {
     limit: searchParams?.limit || 10,
   });
  
+
 
 
   return (
@@ -33,7 +37,8 @@ export default async function Home({ searchParams }) {
 
           <div className="home__filter-container">
             <CustomFilter title="fuel" />
-            <CustomFilter title="year" />
+            {/* <CustomFilter title="year" /> */}
+            <DropdownMenu placeholder="year" data={yearsOfProduction}/>
           </div>
         </div>
 

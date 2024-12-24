@@ -54,6 +54,10 @@ export type FiltersProps = {
     limit: number,
 }
 
+export type HomeProps = {
+    searchParams: FiltersProps
+}
+
 // export type CarCardProps = {
 //     car: CarProps;
 //   };
