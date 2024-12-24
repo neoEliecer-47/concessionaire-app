@@ -8,7 +8,7 @@ import classNames from "classnames";
 import { useClickOutsideDetector } from "../../hooks/useClickOutsideDetector";
 
 interface MyValues {
-  year: string
+  item: string
 }
 
 type DropdownMenuProps = {
