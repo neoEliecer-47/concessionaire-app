@@ -11,13 +11,16 @@ import { useRouter } from "next/navigation";
 const SearchBar = () => {
   const [manufacturer, setManufacturer] = useState<string>("");
   const [model, setModel] = useState<string>("");
-  const router = useRouter()
-
+  const router = useRouter();
 
   function handleSearch(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (manufacturer === "" || model === "") return alert("Please fill in all fields");
-    updateSearchParams(model.toLocaleLowerCase(), manufacturer.toLocaleLowerCase());
+    if (manufacturer === "" || model === "")
+      return alert("Please fill in all fields");
+    updateSearchParams(
+      model.toLocaleLowerCase(),
+      manufacturer.toLocaleLowerCase()
+    );
   }
 
   function updateSearchParams(model: string, manufacturer: string) {
@@ -33,7 +36,9 @@ const SearchBar = () => {
     } else {
       searchParams.delete("manufacturer");
     }
-    const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
+    const newPathname = `${
+      window.location.pathname
+    }?${searchParams.toString()}`;
     router.push(newPathname, { scroll: false });
     //return searchParams.toString();
   }

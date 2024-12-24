@@ -4,32 +4,36 @@ import { useEffect, useState } from "react";
 import styles from "./DropdownMenu.module.css";
 import { CheckIcon } from "@heroicons/react/24/solid";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
-import classNames from "classnames";
+
 import { useClickOutsideDetector } from "../../hooks/useClickOutsideDetector";
+import { useRouter } from "next/navigation";
+import { updateSearchParams } from "../../utils";
 
 interface MyValues {
-  item: string
+  item: string;
 }
 
 type DropdownMenuProps = {
-    placeholder: string;
-    data: MyValues[];
-    money?: boolean;
-    
-    paramValue?: string;
-}
+  placeholder: string;
+  data: MyValues[];
+  money?: boolean;
+
+  paramValue?: string;
+};
 
 export default function DropdownMenu({
   placeholder,
   data,
   money = false,
- 
+
   paramValue,
 }: DropdownMenuProps) {
   const [open, setOpen] = useState<boolean>(false);
   const [option, setOption] = useState<number | null>(null);
+  const router = useRouter();
 
-  const { dropMenuRef, isClickOutside, setIsClickOutside } = useClickOutsideDetector();
+  const { dropMenuRef, isClickOutside, setIsClickOutside } =
+    useClickOutsideDetector();
 
   // function checkIndexInData(value: string | null) {
   //   const string = getValues(value, null);
@@ -55,24 +59,32 @@ export default function DropdownMenu({
   //   setOpen(!open);
   // }
 
-  function getValues(item, index){
-     if (money && index === 0) {
-      return "No Minimun";}
-      if(item instanceof Object)
-    return typeof item === "object" ? Object.values(item)[0] : item;
-   }
+  function getValues(item: string | Object, index: number) {
+    if (money && index === 0) {
+      return "No Minimun";
+    }
+    if (item instanceof Object)
+      return typeof item === "object" ? Object.values(item)[0] : item;
+  }
 
-   function buildPlaceholder(tooltip?: string) {
-     if(option === null) return placeholder;
+  function handleSearchParams(e: {type: string ,value: string}) {
+    const newPathname = updateSearchParams(e.type, e.value);
+    router.push(newPathname, { scroll: false });
+  }
+
+
+  function buildPlaceholder(tooltip?: string) {
+    if (option === null) return placeholder;
     let item = data[option];
-     let currentOptionName = "";
-     currentOptionName = getValues(item, option);
-     if (tooltip) return placeholder;
-     //onValue(placeholder);
+    let currentOptionName = "";
+    currentOptionName = getValues(item, option);
+    if (tooltip) return placeholder;
+    //onValue(placeholder);
     return (
-      currentOptionName?.slice(0, 11) + `${placeholder?.length > 10 ? "..." : ""}`
+      currentOptionName?.slice(0, 11) +
+      `${placeholder?.length > 10 ? "..." : ""}`
     );
-   }
+  }
 
   useEffect(() => {
     if (isClickOutside) {
@@ -88,10 +100,12 @@ export default function DropdownMenu({
 
   return (
     // <div style={{ position: "relative", zIndex: 6,,  display: 'flex' }}>
-    <section style={{ cursor: "pointer" }} ref={dropMenuRef} >
-      <div className={styles.placeholderContainer} onClick={() => setOpen(!open)}>
-        {buildPlaceholder()}
-      </div>
+    <section
+      style={{ cursor: "pointer" }}
+      ref={dropMenuRef}
+      onClick={() => setOpen(!open)}
+    >
+      <div className={styles.placeholderContainer}>{buildPlaceholder()}</div>
       {/* <div
         className={classNames(
           styles.placeholderContainer,
@@ -119,9 +133,12 @@ export default function DropdownMenu({
 
       <div
         className={styles.options}
-        style={{ padding: `${open ? "10px 0px" : "0px"}`, width: "8rem", maxHeight: `${open ? '10rem' : '0px'}` }}
+        style={{
+          padding: `${open ? "10px 0px" : "0px"}`,
+          width: "8rem",
+          maxHeight: `${open ? "10rem" : "0px"}`,
+        }}
       >
-        
         {open &&
           data.map((item, index) => (
             <div
@@ -143,7 +160,6 @@ export default function DropdownMenu({
               </div>
             </div>
           ))}
-          
       </div>
     </section>
     // </div>
