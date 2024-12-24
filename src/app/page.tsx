@@ -19,7 +19,7 @@ export default async function Home({ searchParams }: HomeProps) {
     limit: searchParams?.limit || 10,
   });
  
-
+  const isDataEmpty = !Array.isArray(allCars) || allCars.length  < 1 || !allCars;
 
 
   return (
@@ -42,7 +42,7 @@ export default async function Home({ searchParams }: HomeProps) {
         </div>
 
         <div>
-          {allCars ? (
+          {!isDataEmpty ? (
             <section>
               <div className='home__cars-wrapper'>
                 {allCars?.map((car)=>(
@@ -55,9 +55,10 @@ export default async function Home({ searchParams }: HomeProps) {
               <h2
                 style={{ color: "black", font: "1.25rem", fontWeight: "700" }}
               >
-                No Results
+                No results found
               </h2>
-              {/* <p>{allCars2?.message}</p> */}
+               {allCars?.message}
+             
             </div>
           )}
         </div>
