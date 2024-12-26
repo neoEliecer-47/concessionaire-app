@@ -52,7 +52,7 @@ export default async function Home({ searchParams }: HomeProps) {
 
               <ShowMore
                 pageNumber={(searchParams?.pageNumber || 10) / 10}
-                isNext={(searchParams?.limit || 10) < allCars?.length}
+                isNext={(searchParams?.limit || 10) < allCars?.length}//if the limit is less than the number of cars we get from the API, we will show the button
               />
             </section>
           ) : (
