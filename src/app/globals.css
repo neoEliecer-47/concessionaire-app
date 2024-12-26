@@ -152,7 +152,7 @@ input:focus {
 }
 
 .home__filters {
-  margin-top: 3rem;
+  margin-top: 2rem;
   width: 100%;
   align-items: center;
   flex-wrap: wrap;
@@ -239,7 +239,7 @@ input:focus {
   grid-template-columns: repeat(1, minmax(0, 1fr));
   width: 100%;
   gap: 2rem;
-  padding-top: 3.5rem;
+  padding-top: 2rem;
 }
 
 .car-card {

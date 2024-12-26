@@ -11,7 +11,7 @@
     justify-content: center;
     background-color: rgb(209, 217, 217);
     border-radius: var(--complete);
-    width: 100%;
+    width: 8rem;
 }
 
 .desktopClass{
