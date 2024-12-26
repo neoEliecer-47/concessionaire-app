@@ -1,4 +1,4 @@
-import classNames from "classnames";
+
 import { searchButtonProps } from "../../types";
 import styles from "./SearchButton.module.css";
 import Image from "next/image";
@@ -8,9 +8,7 @@ const SearchButton = ({ otherClasses }: searchButtonProps) => {
     <button
       type="submit"
       className={styles.searchButtonContainer}
-     
-    >
-      Search
+    >  
       <Image
         src="/magnifying-glass.svg"
         alt="magnifying glass"

@@ -10,6 +10,7 @@ import { HomeProps } from "../../types";
 import DropdownMenu from "@/components/DropdownMenu";
 import { useState } from "react";
 import ShowMore from "@/components/ShowMore";
+import SearchButton from "@/components/SearchButton";
 
 export default async function Home({ searchParams }: HomeProps) {
   const allCars = await fetchCars({
@@ -38,6 +39,9 @@ export default async function Home({ searchParams }: HomeProps) {
           <div className="home__filter-container">
             <DropdownMenu placeholder="Fuel" data={fuels} />
             <DropdownMenu placeholder="Year" data={yearsOfProduction} />
+          </div>
+          <div className="search-button__container">
+            <SearchButton />
           </div>
         </div>
 

@@ -21,12 +21,15 @@ const ShowMore = ({ pageNumber, isNext }: showMoreProps) => {
   return (
     <div className={styles.showMoreContainer}>
         {!isNext && (
-            <CustomButton 
+            <>
+              <CustomButton 
                 title="Show More"
                 btnType="button"
                 containerStyles="bg-primary-blue rounded-full text-white"
                 handleClick={handleNavigation}
             />
+            <div>why tf are u displaying the button</div>
+            </>
         )}
     </div>
   )

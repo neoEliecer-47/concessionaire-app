@@ -4,8 +4,8 @@
   --primary-blue: #2b59ff;
   --primary-black: #2b2c35;
   --primary-blue-100: #f5f8ff;
-  --primary-grey: #747A88;
-  --complete: 9999px
+  --primary-grey: #747a88;
+  --complete: 9999px;
 }
 
 * {
@@ -87,7 +87,6 @@
   outline: 1px solid transparent;
   outline-offset: 1px;
   border: none;
-  
 }
 
 /* footer */
@@ -163,7 +162,7 @@ input:focus {
 
 .home__filter-container {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem;
@@ -172,10 +171,9 @@ input:focus {
 .searchbar {
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   width: 100%;
   position: relative;
-  max-width: 48rem;
 }
 
 .searchbar__item {
@@ -189,7 +187,7 @@ input:focus {
 .search-manufacturer {
   flex: 1;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
 }
 .search-manufacturer__input {
@@ -244,7 +242,7 @@ input:focus {
   padding-top: 3.5rem;
 }
 
-.car-card{
+.car-card {
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
@@ -252,10 +250,9 @@ input:focus {
   align-items: center;
   color: var(--primary-black);
   /* background-color: var(--primary-blue-100); */
-  background-color: rgb(234, 222, 208); 
+  background-color: rgb(234, 222, 208);
   border-radius: 1.5rem;
   transition: all 500ms ease;
-  
 }
 
 .car-card:hover {
@@ -264,7 +261,7 @@ input:focus {
     0 2px 4px -2px rgb(0, 0, 0, 0.1);
 }
 
-.car-card__content{
+.car-card__content {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -272,38 +269,41 @@ input:focus {
   gap: 0.5rem;
 }
 
-.car-card__content-title{
+.car-card__content-title {
   font-size: 22px;
   line-height: 26px;
   font-weight: 700;
   text-transform: capitalize;
 }
 
-.car-card__btn-container{
+.car-card__btn-container {
   display: none;
   position: absolute;
   bottom: 8px;
   width: 100%;
   z-index: 10;
   transition: all 1s ease;
- 
-  
 }
 
-.buttonStylesCarCard{
+.buttonStylesCarCard {
   width: 100%;
   padding: 1.2rem 0;
   border-radius: 9999px;
   background-color: var(--primary-blue);
   z-index: 0;
-  
 }
 
-.textStylesCarCard{
+.textStylesCarCard {
   color: white;
   font-size: 14px;
   font-weight: 700;
   line-height: 1rem;
+}
+
+.search-button__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* 2xl */
@@ -361,10 +361,12 @@ input:focus {
 
   .searchbar__item {
     width: 100%;
+    padding: 0;
   }
 
   .search-manufacturer {
     width: 100%;
+    padding: 0;
   }
   .search-manufacturer__input {
     border-radius: 9999px;

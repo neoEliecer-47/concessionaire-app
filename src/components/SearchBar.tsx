@@ -44,15 +44,18 @@ const SearchBar = () => {
   }
 
   return (
-    <form className="searchbar" onSubmit={handleSearch}>
+    <form
+      className="searchbar"
+      onSubmit={handleSearch}
+      style={{ gap: "0.3rem" }}
+    >
       <div className="searchbar__item">
         <SearchManufacturer
           manufacturer={manufacturer}
           setManufacturer={setManufacturer}
         />
-        <SearchButton otherClasses="desktop" />
       </div>
-      <div className={classNames("searchbar__item", "")} style={{}}>
+      <div className={classNames("searchbar__item", "")}>
         <Image
           src="/model-icon.png"
           alt="model image icon"
@@ -77,10 +80,10 @@ const SearchBar = () => {
             border: "none",
             backgroundColor: "rgba(59, 60, 152, 0.07)",
             borderRadius: "9999px",
+            width: "100%",
           }}
           onChange={(e) => setModel(e.target.value)}
         />
-        <SearchButton otherClasses="" />
       </div>
     </form>
   );
