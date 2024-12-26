@@ -13,15 +13,14 @@ import ShowMore from "@/components/ShowMore";
 
 export default async function Home({ searchParams }: HomeProps) {
   const allCars = await fetchCars({
-    manufacturer: searchParams?.manufacturer || '',
-    model: searchParams?.model || '',
+    manufacturer: searchParams?.manufacturer || "",
+    model: searchParams?.model || "",
     year: searchParams?.year || 2010,
-    fuel: searchParams?.fuel || '',
-    limit: searchParams?.limit || 10,
+    fuel: searchParams?.fuel || "",
+    limit: searchParams?.limit || 10,//this limits the number of cars we get from the API, and it chenges when we click on the show more button
   });
- 
-  const isDataEmpty = !Array.isArray(allCars) || allCars.length  < 1 || !allCars;
 
+  const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
   return (
     <main className={styles.main}>
@@ -37,21 +36,21 @@ export default async function Home({ searchParams }: HomeProps) {
           <SearchBar />
 
           <div className="home__filter-container">
-            <DropdownMenu placeholder="Fuel" data={fuels}/>
-            <DropdownMenu placeholder="Year" data={yearsOfProduction}/>
+            <DropdownMenu placeholder="Fuel" data={fuels} />
+            <DropdownMenu placeholder="Year" data={yearsOfProduction} />
           </div>
         </div>
 
         <div>
           {!isDataEmpty ? (
             <section>
-              <div className='home__cars-wrapper'>
-                {allCars?.map((car)=>(
-                  <CarCard car={car}/>
+              <div className="home__cars-wrapper">
+                {allCars?.map((car) => (
+                  <CarCard car={car} />
                 ))}
               </div>
 
-              <ShowMore 
+              <ShowMore
                 pageNumber={(searchParams?.pageNumber || 10) / 10}
                 isNext={(searchParams?.limit || 10) < allCars?.length}
               />
@@ -63,8 +62,7 @@ export default async function Home({ searchParams }: HomeProps) {
               >
                 No results found
               </h2>
-               {allCars?.message}
-             
+              {allCars?.message}
             </div>
           )}
         </div>

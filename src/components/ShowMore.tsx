@@ -12,7 +12,7 @@ const ShowMore = ({ pageNumber, isNext }: showMoreProps) => {
     const router = useRouter();
 
     function handleNavigation() {
-        const newLimit = (pageNumber + 1) * 10;
+        const newLimit = (pageNumber + 1) * 10;//so the first time we click on the button we will get 20, then 30 and so on
         const newPathName = updateSearchParams("limit", newLimit.toString());
      
          router.push(newPathName, { scroll: false });
