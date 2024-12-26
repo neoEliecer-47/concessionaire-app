@@ -58,6 +58,11 @@ export type HomeProps = {
     searchParams: FiltersProps
 }
 
+export type showMoreProps = {
+    pageNumber: number,
+    isNext: boolean
+}
+
 // export type CarCardProps = {
 //     car: CarProps;
 //   };
