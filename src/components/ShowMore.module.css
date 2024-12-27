@@ -4,5 +4,12 @@
     justify-content: center;
     align-items: center;
     gap: 1.25rem;
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
+}
+
+.stylesForButton{
+    background-color: var(--primary-blue);
+    border-radius: 9999px;
+    color: white;
+    
 }

@@ -85,6 +85,7 @@ const SearchBar = () => {
           onChange={(e) => setModel(e.target.value)}
         />
       </div>
+      <SearchButton />
     </form>
   );
 };

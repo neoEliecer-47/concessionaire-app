@@ -1,16 +1,12 @@
-import Image from "next/image";
 import styles from "./page.module.css";
 import Hero from "@/components/Hero";
 import SearchBar from "@/components/SearchBar";
-import CustomFilter from "@/components/CustomFilter";
-import { fetchCars, generateCarImageUrl } from "../../utils";
+import { fetchCars } from "../../utils";
 import CarCard from "@/components/CarCard";
-import { fuels, manufacturers, yearsOfProduction } from "../../constants";
+import { fuels, yearsOfProduction } from "../../constants";
 import { HomeProps } from "../../types";
 import DropdownMenu from "@/components/DropdownMenu";
-import { useState } from "react";
 import ShowMore from "@/components/ShowMore";
-import SearchButton from "@/components/SearchButton";
 
 export default async function Home({ searchParams }: HomeProps) {
   const allCars = await fetchCars({
@@ -18,8 +14,12 @@ export default async function Home({ searchParams }: HomeProps) {
     model: searchParams?.model || "",
     year: searchParams?.year || 2010,
     fuel: searchParams?.fuel || "",
-    limit: searchParams?.limit || 10,//this limits the number of cars we get from the API, and it chenges when we click on the show more button
+    limit: searchParams?.limit || 10, //this limits the number of cars we get from the API, and it chenges when we click on the show more button
   });
+
+  const num = 10 < 10
+  console.log(num)
+  console.log({cars: allCars?.length})
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
@@ -34,15 +34,11 @@ export default async function Home({ searchParams }: HomeProps) {
         </div>
 
         <div className="home__filters">
-          <SearchBar />
-
           <div className="home__filter-container">
             <DropdownMenu placeholder="Fuel" data={fuels} />
             <DropdownMenu placeholder="Year" data={yearsOfProduction} />
           </div>
-          <div className="search-button__container">
-            <SearchButton />
-          </div>
+          <SearchBar />
         </div>
 
         <div>
@@ -55,8 +51,8 @@ export default async function Home({ searchParams }: HomeProps) {
               </div>
 
               <ShowMore
-                pageNumber={(searchParams?.pageNumber || 10) / 10}
-                isNext={(searchParams?.limit || 10) < allCars?.length}//if the limit is less than the number of cars we get from the API, we will show the button
+                pageNumber={(searchParams?.limit || 10) / 10}
+                isNext={(searchParams?.limit || 10) > allCars?.length} //if the limit is less than the number of cars we get from the API, we will show the button
               />
             </section>
           ) : (
