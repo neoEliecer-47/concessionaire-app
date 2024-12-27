@@ -55,7 +55,7 @@ export type FiltersProps = {
 }
 
 export type HomeProps = {
-    searchParams: FiltersProps
+    searchParams:  Promise<FiltersProps>
 }
 
 export type showMoreProps = {
