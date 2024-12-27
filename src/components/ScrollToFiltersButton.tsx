@@ -7,7 +7,6 @@ import ArrowScroll from "./icons/ArrowScroll";
 
 const ScrollToFiltersButton = () => {
   const scrollPostion = useScrollDetector();
-  console.log(scrollPostion);
 
   function handleScroll() {
     const filtersContainer = document.getElementById("filters");
@@ -16,9 +15,9 @@ const ScrollToFiltersButton = () => {
 
   return (
     <div className={styles.buttonContainer}>
-      {scrollPostion > 500 && (
-        <button className={styles.buttonStyles} onClick={() => handleScroll()}>
-          <ArrowScroll />
+      {scrollPostion > 1500 && (
+        <button className={styles.buttonStyles} onClick={handleScroll}>
+          <ArrowScroll otherStyles={styles.stylesForIcon}/>
         </button>
       )}
     </div>

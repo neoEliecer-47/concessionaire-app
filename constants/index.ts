@@ -43,6 +43,13 @@ export const manufacturers = [
 ];
 
 export const yearsOfProduction = [
+  { item: "2008" },
+  { item: "2009" },
+  { item: "2010" },
+  { item: "2011" },
+  { item: "2012" },
+  { item: "2013" },
+  { item: "2014" },
   { item: "2015" },
   { item: "2016" },
   { item: "2017" },
@@ -52,6 +59,7 @@ export const yearsOfProduction = [
   { item: "2021" },
   { item: "2022" },
   { item: "2023" },
+  { item: "2024" },
 ];
 
 export const fuels = [

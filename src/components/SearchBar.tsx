@@ -81,6 +81,7 @@ const SearchBar = () => {
             backgroundColor: "rgba(59, 60, 152, 0.07)",
             borderRadius: "9999px",
             width: "100%",
+            fontSize: '0.95rem'
           }}
           onChange={(e) => setModel(e.target.value)}
         />

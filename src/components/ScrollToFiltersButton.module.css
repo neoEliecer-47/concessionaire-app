@@ -10,9 +10,25 @@
     position: fixed;
     bottom: 30px;
     padding: 1rem;
-    color: white;
+    color: rgb(153, 153, 205);
     background-color: var(--primary-blue);
-    border-radius: 1rem;
-    width: 2rem;
-    height: 2rem;
+    border-radius: 20rem;
+    border: none;
+    width: 3.5rem;
+    height: 3.5rem;
+    z-index: 1200;
+    transition: all 0.3s ease;
+}
+
+.stylesForIcon{
+    transform: rotate(180deg);
+    color: white;
+    stroke-width: 2px;
+    
+}
+
+.buttonStyles:hover{
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
 }
