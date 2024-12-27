@@ -153,21 +153,16 @@ input:focus {
 }
 
 .home__filters {
-  
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
-  
-  
-  
 }
 
 .home__filter-container {
   display: flex;
-  
+
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
@@ -183,7 +178,6 @@ input:focus {
 }
 
 .searchbar__item {
-  
   display: flex;
   justify-content: start;
   align-items: center;
@@ -348,8 +342,7 @@ input:focus {
 }
 
 @media screen and (min-width: 700px) {
-  .home__filters{
-  
+  .home__filters {
     justify-content: center;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -357,19 +350,19 @@ input:focus {
     width: auto;
   }
 
-  .home__filter-container{
+  .home__filter-container {
     width: 20rem;
   }
 
-  .searchbar{
+  .searchbar {
     width: auto;
   }
 
-  .search-manufacturer{
+  .search-manufacturer {
     flex: 1;
   }
 
-  .search-manufacturer__input{
+  .search-manufacturer__input {
     border-radius: 9999px;
   }
 }
@@ -402,5 +395,4 @@ input:focus {
     width: 100%;
     padding: 0;
   }
-  
 }

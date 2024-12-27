@@ -7,6 +7,8 @@ import { fuels, yearsOfProduction } from "../../constants";
 import { HomeProps } from "../../types";
 import DropdownMenu from "@/components/DropdownMenu";
 import ShowMore from "@/components/ShowMore";
+import ScrollToFiltersButton from "@/components/ScrollToFiltersButton";
+
 
 export default async function Home({ searchParams }: HomeProps) {
   const allCars = await fetchCars({
@@ -16,6 +18,8 @@ export default async function Home({ searchParams }: HomeProps) {
     fuel: searchParams?.fuel || "",
     limit: searchParams?.limit || 10, //this limits the number of cars we get from the API, and it chenges when we click on the show more button
   });
+
+
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
@@ -30,13 +34,15 @@ export default async function Home({ searchParams }: HomeProps) {
             <p>Explore the cars you might like</p>
           </div>
 
-          <div className="home__filters">
+          <div className="home__filters" id="filters">
             <div className="home__filter-container">
               <DropdownMenu placeholder="Fuel" data={fuels} />
               <DropdownMenu placeholder="Year" data={yearsOfProduction} />
             </div>
             <SearchBar />
           </div>
+        
+          <ScrollToFiltersButton />
         
 
         <div>
