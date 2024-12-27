@@ -16,21 +16,20 @@ const ShowMore = ({ pageNumber, isNext }: showMoreProps) => {
     router.push(newPathName, { scroll: false });
   }
 
-  console.log(isNext)
+  console.log(isNext);
 
   return (
     <div
       className={styles.showMoreContainer}
-      style={{ display: `${isNext === false ? 'flex' : 'none'}` }} 
+      style={{ display: `${isNext === false ? "flex" : "none"}` }}
     >
       {!isNext && (
         <CustomButton
-        title="Show More"
-        btnType="button"
-        containerStyles={styles.stylesForButton}
-        handleClick={handleNavigation}
-        
-      />
+          title="Show More"
+          btnType="button"
+          containerStyles={styles.stylesForButton}
+          handleClick={handleNavigation}
+        />
       )}
     </div>
   );

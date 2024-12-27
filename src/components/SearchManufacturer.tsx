@@ -1,8 +1,5 @@
 "use client";
 
-
-
-
 import { SearchManufacturerProps } from "../../types";
 import {
   Combobox,
@@ -58,7 +55,7 @@ const SearchManufacturer = ({
           <ComboboxInput
             className="search-manufacturer__input"
             placeholder="Volkswagen"
-            style={{ paddingLeft: "2.5rem" }}
+            style={{ paddingLeft: "2.5rem"}}
             displayValue={(manufacturer: string) => manufacturer}
             onChange={(e) => setQuery(e.target.value)}
           />

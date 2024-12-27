@@ -1,3 +1,7 @@
+.searchManufacturerContainer {
+  border-radius: 20rem;
+}
+
 .transitionLeave {
   transition: all ease-in 100ms;
 }

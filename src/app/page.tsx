@@ -17,10 +17,6 @@ export default async function Home({ searchParams }: HomeProps) {
     limit: searchParams?.limit || 10, //this limits the number of cars we get from the API, and it chenges when we click on the show more button
   });
 
-  const num = 10 < 10
-  console.log(num)
-  console.log({cars: allCars?.length})
-
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
   return (
@@ -28,18 +24,20 @@ export default async function Home({ searchParams }: HomeProps) {
       <Hero />
 
       <div className={styles.carsContainer} id="discover">
-        <div className="home__text-container">
-          <h1 className={styles.titleCarsHome}>Car Catalogue</h1>
-          <p>Explore the cars you might like</p>
-        </div>
-
-        <div className="home__filters">
-          <div className="home__filter-container">
-            <DropdownMenu placeholder="Fuel" data={fuels} />
-            <DropdownMenu placeholder="Year" data={yearsOfProduction} />
+        
+          <div className="home__text-container">
+            <h1 className={styles.titleCarsHome}>Car Catalogue</h1>
+            <p>Explore the cars you might like</p>
           </div>
-          <SearchBar />
-        </div>
+
+          <div className="home__filters">
+            <div className="home__filter-container">
+              <DropdownMenu placeholder="Fuel" data={fuels} />
+              <DropdownMenu placeholder="Year" data={yearsOfProduction} />
+            </div>
+            <SearchBar />
+          </div>
+        
 
         <div>
           {!isDataEmpty ? (
