@@ -1,4 +1,9 @@
-const ArrowScroll = ({ otherStyles }: {otherStyles: string}) => {
+type ArrowScrollProps = {
+    otherStyles: string
+}
+
+
+const ArrowScroll = ({ otherStyles }: ArrowScrollProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -124,14 +124,18 @@
   height: 2.3rem;
 }
 
-.keyStyles{
+.keyStyles {
   color: var(--primary-grey);
   text-transform: capitalize;
 }
 
-.valueStyles{
+.valueStyles {
   color: var(--primary-black);
   font-weight: 600;
+}
+
+.stylesForIcon {
+  stroke-width: 2px;
 }
 
 @keyframes modal-animation-in {

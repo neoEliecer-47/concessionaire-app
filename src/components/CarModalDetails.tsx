@@ -117,7 +117,7 @@ const CarModalDetails = ({ isOpen, car, onClick }: CarModalDetailsProps) => {
               ))}
               <section className={styles.buttonScrollContainer}> 
                 <button className={styles.buttonScroll} onClick={scrollDown}>
-                  <ArrowScroll />
+                  <ArrowScroll otherStyles={styles.stylesForIcon}/>
                 </button>
               </section>
 
