@@ -14,7 +14,7 @@ export default async function Home({ searchParams }: HomeProps) {
   const allCars = await fetchCars({
     manufacturer: filters?.manufacturer || "",
     model: filters?.model || "",
-    year: filters?.year || 2010,
+    year: filters?.year || 2012,
     fuel: filters?.fuel || "",
     limit: filters?.limit || 10, //this limits the number of cars we get from the API, and it chenges when we click on the show more button
   });
