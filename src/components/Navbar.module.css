@@ -23,5 +23,12 @@
 @media screen and (min-width: 640px){
     .navBox{
         padding: 0 4rem;
+
+    }
+}
+
+@media screen and (min-width: 768px){
+    .navBox{
+        padding-left: 0;
     }
 }
