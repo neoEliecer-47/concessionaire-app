@@ -8,7 +8,7 @@ export async function fetchCars(filters: FiltersProps) {
   const url = `https://api.api-ninjas.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`;
 
   const headers: HeadersInit = {
-    "X-Api-Key": process.env.NEXT_PUBLIC_API_KEY || "",
+    "X-Api-Key": 'mpeQZUj/cJcv7C/VZ0YeXw==nvpSwu8fXiY7yetH',
     contentType: "application/json",
   };
 
